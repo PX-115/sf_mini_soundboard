@@ -36,6 +36,13 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         ),
         backgroundColor: Colors.green,
         bottom: TabBar(
+          indicatorWeight: 4,
+          indicatorColor: Colors.white,
+          //unselectedLabelColor: Colors.grey,
+          labelStyle: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold
+          ),
           controller: _tabController,
           tabs: <Widget>[
             Tab(

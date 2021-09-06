@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:audioplayers/audio_cache.dart';
 
 class AbaQuotes extends StatefulWidget {
   const AbaQuotes({ Key key }) : super(key: key);
@@ -8,6 +9,24 @@ class AbaQuotes extends StatefulWidget {
 }
 
 class _AbaQuotesState extends State<AbaQuotes> {
+
+  AudioCache _audioCache = new AudioCache(prefix: "audio/");
+
+  _executar(String arquivo) async {
+    _audioCache.play(arquivo);
+  }
+
+  @override
+    void initState() {
+      // Pré-carregar audios
+      super.initState();
+      _audioCache.loadAll([
+        "akuma_messatsu.wav", "akuma_shoushi.wav", "chunli_gomenne.wav", "dan_yataze_oyaji.wav",
+        "gen_youarebigfool.wav", "guy_waruku_omou_na.wav", "mbison_nuruiwa.wav", "nash_tooeasy.wav", "rolento_readygetsetfire.wav", 
+        "rose_sorejadame.wav", "sakura_konatokodane.wav", "zangief_harashou_tarieda.wav"
+      ]);
+    }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -23,7 +42,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Akuma-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("akuma_shoushi.wav");
                       },
                     ),
                   ),
@@ -45,7 +64,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Chun-Li-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("chunli_gomenne.wav");
                       },
                     ),
                   ),
@@ -72,20 +91,20 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Dan-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("dan_yataze_oyaji.wav");
                       },
                     ),
                   ),
 
                   Text(
-                    "Eu consegui... Pai!",
+                    "Yataze... Oyaji!",
                     style: TextStyle(
                       fontSize: 15,
                       fontStyle: FontStyle.italic
                     ),
                   ),
                   Text(
-                    "(Yataze... Oyaji!)",
+                    "(Eu consegui... Pai!)",
                     style: TextStyle(
                       fontSize: 15,
                       fontStyle: FontStyle.italic
@@ -101,7 +120,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Gen-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("gen_youarebigfool.wav");
                       },
                     ),
                   ),
@@ -135,7 +154,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Guy-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("guy_waruku_omou_na.wav");
                       },
                     ),
                   ),
@@ -164,7 +183,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/M.Bison-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("mbison_nuruiwa.wav");
                       },
                     ),
                   ),
@@ -191,7 +210,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Nash-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("nash_tooeasy.wav");
                       },
                     ),
                   ),
@@ -213,7 +232,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Rolento-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("rolento_readygetsetfire.wav");
                       },
                     ),
                   ),
@@ -247,7 +266,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Rose-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("rose_sorejadame.wav");
                       },
                     ),
                   ),
@@ -276,7 +295,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Sagat-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("sagat_laugh2.wav");
                       },
                     ),
                   ),
@@ -303,7 +322,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Sakura-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("sakura_konatokodane.wav");
                       },
                     ),
                   ),
@@ -335,7 +354,7 @@ class _AbaQuotesState extends State<AbaQuotes> {
                     child: GestureDetector(
                       child: Image.asset("assets/imagem/Zangief-SFA2-Icon.png", height: 150, width: 150,),
                       onTap: (){
-
+                        _executar("zangief_harashou_tarieda.wav");
                       },
                     ),
                   ),

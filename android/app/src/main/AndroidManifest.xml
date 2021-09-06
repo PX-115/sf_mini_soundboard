@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.cursoflutter.px.sf_mini_soundboard">
    <application
-        android:label="sf_mini_soundboard"
+        android:label="SFA Mini Soundboard"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
